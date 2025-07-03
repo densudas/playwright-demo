@@ -1,0 +1,23 @@
+[versions]
+com-google-guava-guava = "33.4.8-jre"
+io-github-bonigarcia-webdrivermanager = "6.1.0"
+org-seleniumhq-selenium-selenium-java = "4.33.0"
+org-testng-testng = "7.11.0"
+com-microsoft-playwright-playwright = "1.53.0"
+io-rest-assured-rest-assured = "5.4.0"
+org-junit-jupiter = "5.10.0"
+org-junit-bom = "5.10.0"
+
+[libraries]
+com-google-guava-guava = { module = "com.google.guava:guava", version.ref = "com-google-guava-guava" }
+io-github-bonigarcia-webdrivermanager = { module = "io.github.bonigarcia:webdrivermanager", version.ref = "io-github-bonigarcia-webdrivermanager" }
+org-seleniumhq-selenium-selenium-java = { module = "org.seleniumhq.selenium:selenium-java", version.ref = "org-seleniumhq-selenium-selenium-java" }
+org-testng-testng = { module = "org.testng:testng", version.ref = "org-testng-testng" }
+com-microsoft-playwright-playwright = { module = "com.microsoft.playwright:playwright", version.ref = "com-microsoft-playwright-playwright" }
+io-rest-assured-rest-assured = { module = "io.rest-assured:rest-assured", version.ref = "io-rest-assured-rest-assured" }
+org-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "org-junit-jupiter" }
+org-junit-bom = { module = "org.junit:junit-bom", version.ref = "org-junit-bom" }
+
+[bundles]
+
+[plugins]

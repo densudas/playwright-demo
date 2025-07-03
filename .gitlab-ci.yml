@@ -1,0 +1,22 @@
+image: openjdk:21-jdk
+
+stages:
+  - build
+  - test
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2"
+
+cache:
+  paths:
+    - .m2/
+
+build:
+  stage: build
+  script:
+    - ./gradlew build -x test
+
+test:
+  stage: test
+  script:
+    - ./gradlew test

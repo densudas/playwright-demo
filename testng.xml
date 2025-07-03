@@ -1,0 +1,2 @@
+<suite name="MySuite" parallel="tests" thread-count="2">
+</suite>
