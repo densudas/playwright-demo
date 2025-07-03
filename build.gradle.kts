@@ -24,7 +24,7 @@ dependencies {
 
 group = "io.github.densudas"
 version = "1.0-SNAPSHOT"
-description = "automation-testing-framework"
+description = "playwright-demo"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
 publishing {
