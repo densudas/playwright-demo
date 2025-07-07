@@ -5,18 +5,29 @@ stages:
   - test
 
 variables:
-  MAVEN_OPTS: "-Dmaven.repo.local=.m2"
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
 
 cache:
   paths:
-    - .m2/
+    - .gradle/
+    - build/
 
 build:
   stage: build
   script:
+    - chmod +x gradlew
     - ./gradlew build -x test
 
 test:
   stage: test
   script:
+    - ./gradlew installPlaywrightBrowsers
     - ./gradlew test
+  artifacts:
+    when: always
+    paths:
+      - build/reports/
+      - build/test-results/
+      - "*.png"
+      - trace.zip
+    expire_in: 1 week
