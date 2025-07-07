@@ -2,41 +2,9 @@ package io.github.densudas;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-import com.microsoft.playwright.*;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class SauceDemoTest {
-
-    static Playwright playwright;
-    static Browser browser;
-    BrowserContext context;
-    Page page;
-
-    @BeforeAll
-    static void launchBrowser() {
-        playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-    }
-
-    @AfterAll
-    static void closeBrowser() {
-        playwright.close();
-    }
-
-    @BeforeEach
-    void createContextAndPage() {
-        context = browser.newContext();
-        page = context.newPage();
-    }
-
-    @AfterEach
-    void closeContext() {
-        context.close();
-    }
+class SauceDemoTest extends BaseTest {
 
     @Test
     void successfulLogin() {
