@@ -36,3 +36,21 @@ publishing {
 tasks.named<Test>("test") {
     useJUnitPlatform()
 }
+
+tasks.register("installPlaywrightBrowsers") {
+    group = "playwright"
+    description = "Installs Playwright browsers required for automated testing"
+    dependsOn("compileJava")
+    doLast {
+        exec {
+            executable = "java"
+            args = listOf(
+                "-cp",
+                sourceSets.main.get().runtimeClasspath.asPath + ":" + sourceSets.test.get().runtimeClasspath.asPath,
+                "com.microsoft.playwright.CLI",
+                "install",
+                "chromium"
+            )
+        }
+    }
+}
